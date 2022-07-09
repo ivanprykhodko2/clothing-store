@@ -1,41 +1,34 @@
-import Directory from './components/Directory/Directory';
+import { Routes, Route, Outlet } from 'react-router-dom';
 
+import Home from "./Routes/Home/Home";
 
-const App = () => {
-
-    const categories = [
-        {
-          "id": 1,
-          "title": "hats",
-          "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-        },
-        {
-          "id": 2,
-          "title": "jackets",
-          "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-        },
-        {
-          "id": 3,
-          "title": "sneakers",
-          "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-        },
-        {
-          "id": 4,
-          "title": "womens",
-          "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-        },
-        {
-          "id": 5,
-          "title": "mens",
-          "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-        }
-    ]
-
+const SearchBar = () => {
     return (
         <div>
-            <Directory categories={categories}/>
+            <div>
+                <h1>Hi, I'm a NavigationBar</h1>
+            </div>
+
+            <Outlet/>
         </div>
-    );
+    )
+};
+
+const Suish = () => {
+    return(<h1>Hello earth</h1>)
+};
+
+const App = () => {
+    return (
+        <div>
+            <Routes>
+                <Route path='/' element={<SearchBar/>}>
+                    <Route index element={ <Home/> } />
+                    <Route path='main' element={ <Suish/> }/>
+                </Route>
+            </Routes>
+        </div>
+    )
 };
 
 export default App;
