@@ -1,20 +1,10 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom';
 
 import Home from "./Routes/Home/Home";
+import SearchBar from './Routes/SearchBar/SearchBar';
+import SignIn from './Routes/Sign-In/SignIn';
 
-const SearchBar = () => {
-    return (
-        <div>
-            <div>
-                <h1>Hi, I'm a NavigationBar</h1>
-            </div>
-
-            <Outlet/>
-        </div>
-    )
-};
-
-const Suish = () => {
+const Shop = () => {
     return(<h1>Hello earth</h1>)
 };
 
@@ -22,9 +12,10 @@ const App = () => {
     return (
         <div>
             <Routes>
-                <Route path='/' element={<SearchBar/>}>
+                <Route path='/' element={ <SearchBar/> }>
                     <Route index element={ <Home/> } />
-                    <Route path='main' element={ <Suish/> }/>
+                    <Route path='shop' element={ <Shop/> }/>
+                    <Route path='sign-in' element={ <SignIn/> }/>
                 </Route>
             </Routes>
         </div>
