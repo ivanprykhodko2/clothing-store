@@ -1,4 +1,4 @@
-import React,  { useState, useContext }  from 'react';
+import React,  { useState}  from 'react';
 
 import FormInput from '../FormInput/FormInput';
 
@@ -29,7 +29,7 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if(password != confirmPassword){alert('Password is not same');return;} 
+        if(password !== confirmPassword){alert('Password is not same');return;} 
         try{
 
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
@@ -38,7 +38,7 @@ const SignUpForm = () => {
 
         }catch(error){
 
-            if(error.code == 'auth/email-already-in-use'){
+            if(error.code === 'auth/email-already-in-use'){
                 alert('email already in use');
             }else{
                 console.log(error);

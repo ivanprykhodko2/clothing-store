@@ -1,5 +1,4 @@
 // import {useEffect} from 'react';
-import { getRedirectResult } from 'firebase/auth';
 import SignUpForm from '../../components/Sign-Up-Form/SignUpForm.jsx';
 import SignInForm from '../../components/Sign-In-Form/SignInForm.jsx';
 

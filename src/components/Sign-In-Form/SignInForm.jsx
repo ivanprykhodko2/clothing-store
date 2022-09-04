@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 
 import FormInput from '../FormInput/FormInput';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button';
@@ -7,7 +7,6 @@ import { SignInContainer, ButtonContainer } from './SignInForm.style'
 
 import {
     signInWithGooglePopup,
-    createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword
   } from '../../Utils/Firebase/Firebase.utils.js';
 

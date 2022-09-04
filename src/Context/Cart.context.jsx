@@ -5,7 +5,7 @@ const addCartItem = (cartItem, productToAdd) => {
     for(let i=0; i< cartItem.length; i++){
         const cartItemData = cartItem[i];
 
-        if(cartItemData.id == productToAdd.id){
+        if(cartItemData.id === productToAdd.id){
             cartItemData.quantity++;
             return [...cartItem]; 
         }
