@@ -1,7 +1,10 @@
 import React,  { useState, useContext }  from 'react';
+
 import FormInput from '../FormInput/FormInput';
-import './SignUpForm.style.scss';
+
 import Button from '../Button/Button';
+
+import { SignUpContainer } from './SignUpForm.style'
 
 import { 
     createAuthUserWithEmailAndPassword,
@@ -51,7 +54,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <div className='sign-up-container'>
+        <SignUpContainer>
             <h2>Don't have an account?</h2>
             <span>Sign Up with your email and password</span>
             
@@ -68,7 +71,7 @@ const SignUpForm = () => {
                 <Button type="submit">Sign Up</Button>
 
             </form>
-        </div>
+        </SignUpContainer>
     );
 };
 

@@ -4,8 +4,6 @@ import { CategoriesContext } from '../../Context/Categories.context';
 
 import CategoryPreview from '../../components/Category-Preview/CategoryPreview';
 
-import './CategoriesPreview.style.scss';
-
 const CategoriesPreview = () => {
     const { categoriesMap } = useContext(CategoriesContext);
 
