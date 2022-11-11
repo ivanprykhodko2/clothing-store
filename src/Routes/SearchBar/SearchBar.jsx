@@ -1,23 +1,26 @@
-import { Outlet} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-import { Fragment, useContext } from 'react';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
-import { ReactComponent as CrwnLogo} from '../../Assets/crown.svg';
+import { Fragment } from 'react';
 
-import { UserContext } from '../../Context/User.context';
-import { CartContext } from '../../Context/Cart.context';
+import { ReactComponent as CrwnLogo } from '../../Assets/crown.svg';
 
 import { signOutUser } from '../../Utils/Firebase/Firebase.utils';
 
-import CardIcon from '../../components/CardIcon/CardIcon';
+import CartIcon from '../../components/CartIcon/CartIcon';
 import CardDropDown from '../../components/Card-dropDown/CardDropDown';
 
 import { NavigationContainer, NavLinks, NavLink, LogoContainer } from './SearchBar.style';
 
 const SearchBar = () => {
-    const {currentUser} = useContext(UserContext);
-    const {isCartOpen} = useContext(CartContext);
-    
+
+    const currentUser = useSelector(selectCurrentUser);
+    const isCartOpen = useSelector(selectIsCartOpen)
+
+
     return (
         <Fragment>
             <NavigationContainer>
@@ -39,12 +42,12 @@ const SearchBar = () => {
                     )
 
                     }
-                    <CardIcon/>
+                    <CartIcon />
                 </NavLinks>
-                {isCartOpen &&<CardDropDown/>}
+                {isCartOpen && <CardDropDown />}
             </NavigationContainer>
 
-            <Outlet/>
+            <Outlet />
         </Fragment>
     );
 };
