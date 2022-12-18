@@ -5,7 +5,6 @@ import { CheckoutItemContainer, ImageConatiner, Name, Quantity, Price, Arrow, Va
 
 
 const CheckoutItem = ({ cartItem, cartItems }) => {
-    console.log(cartItems);
 
     const dispatch = useDispatch();
 
